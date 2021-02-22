@@ -4,49 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 1</title>
+    <title>Modelorama Jamateco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
         #mapa {
             width: 100%;
             height: 500px;
         }
+        .nav {
+          width: 100%;
+          height: 90px;
+          background: linear-gradient(to bottom, red 80%, yellow);
+          }
+        .logo {
+          width: 240px;
+          height: 30%;
+          margin-bottom: 3%;
+          margin-left: -50px;
+        }
+        .images {
+          max-width: 100%;
+        }
+        .banners {
+          max-height: 60%;
+          width: 100%;
+        }
     </style>
 </head>
-<div class="container-fluid">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand nav">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#mapa">Mapa</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a class="nav-link" aria-current="page" href="#"><img class="logo" src="https://empresarios.modelorama.com.mx/images/age/LOOP.gif" alt=""></a>
+      <div class="navbar-nav" style="float: right;">
+        <a class="nav-link" href="#servicios"><img src="https://r74.cooltext.com/rendered/cooltext377290442094950.png" style=" width: 90px; "alt=""></a>
+        <a class="nav-link" href="#mapa"><img src="https://r74.cooltext.com/rendered/cooltext377290563982994.png" style="width: 90px; margin-top: -3px;" alt=""></a>
       </div>
     </div>
+
   </div>
 </nav>
-</div>
-<body>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+<body style="background-color: #1d2e8c;">
+  <br>
+    <div id="carouselExampleControls" class="carousel slide images" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-
-
-<div data-aos="zoom-in"></div>
-
-
-      <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" alt="...">
+      <img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.0-9/153241268_3818510648206663_6505316586633528828_o.jpg?_nc_cat=110&ccb=3&_nc_sid=730e14&_nc_ohc=GUEQI2wd1VMAX_RN0sg&_nc_ht=scontent.fcvj1-1.fna&oh=05b1048dc0cd1b59429abde96a1a105c&oe=605744A2" class="d-block w-100" alt="Fondo sin cargar">
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" alt="...">
+      <img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.0-9/152243094_3818510448206683_2694713705652471076_o.jpg?_nc_cat=109&ccb=3&_nc_sid=730e14&_nc_ohc=w70MAG5AuoMAX_vP2rW&_nc_ht=scontent.fcvj1-1.fna&oh=ce42f1af27f53f8eaee41bca9074bd3d&oe=60575E2A" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" alt="...">
+      <img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.0-9/152238832_3818511084873286_3080823038316552198_o.jpg?_nc_cat=109&ccb=3&_nc_sid=730e14&_nc_ohc=kEzq6kz2tQgAX-tYmir&_nc_ht=scontent.fcvj1-1.fna&oh=c866a73ebf775c33f1ce7fa0973239c3&oe=6056FBC1" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
@@ -58,39 +70,40 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-    <div class="container">
-        <h1>Practica 1</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </div>
-
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <a name="servicios"></a>
-                    <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Siluetas futuristicas" class="w-100 rounded shadow">
-                    <h2 class="p-3">Subtitulo 1</h2>
-                    <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<center>
+<h2 style="background: linear-gradient(to bottom, red 80%, yellow);">También contamos con...</h2>
+</center>
+<center>
+<div  role="toolbar" aria-label="Toolbar with button groups">
+  <div  class="btn-toolbar mb-3"style="margin-top: 20px; " >
+       <div class=" btn-toolbar mb-3" style="background-color: #ffeb3f; border-radius: 20px; width: 32%; min-width: 430px; margin-left: 10px;">
+        
+         <a name="servicios"></a>
+                    <img style="margin-top: 10px; height: 250px; " src="https://mostwanted.mx/wp-content/uploads/2020/12/Captura-de-Pantalla-2020-12-08-a-las-9.05.07-1024x680.jpg" alt="Siluetas futuristicas" class="w-100 rounded shadow">
+                    <h2 class="p-3">Cervezas de inovación</h2>
+                    <p class="text-justify">Constantemente nos preocupamos por ofrecer a nuestros clientes una amplia gama de inovaciones de todas nuestras marcas, es por eso  que contamos con presentaciones que impactan el mercado actual del consumo de cerveza, un ejemplo de ello tenemos la ampliación de marca de Modelo cristal denominada "Modelo Noche Especial", que brinda un sabor unico al tomarla sola o acompañada de algún alimento.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Siluetas futuristicas" class="w-100 rounded shadow">
-                    <h2 class="p-3">Subtitulo 2</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class=" btn-toolbar mb-3" style="background-color: #ffeb3f; border-radius: 20px; width: 32%; min-width: 430px; margin-left: 10px;">
+                    <img style="margin-top: 10px; height: 250px;" src="https://www.elfinanciero.com.mx/uploads/2017/08/02/598289bee5319.png" alt="Siluetas futuristicas" class="w-100 rounded shadow">
+                    <h2 class="p-3">Cervezas de importación</h2>
+                    <p>En modelorama Jamateco tenemos en existencia las marcas más exitosas de cervezas de México y el mundo, tales como la familia Michelob Ultra, Budweiser, Bud light y Stella Artois, que marcan diferencia por su sabor y calidad. </p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <img src="https://images.pexels.com/photos/4905057/pexels-photo-4905057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Siluetas futuristicas" class="w-100 rounded shadow">
-                    <h2 class="p-3">Subtitulo 3</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum./p>
+                <div class=" btn-toolbar mb-3"  style="background-color: #ffeb3f; border-radius: 20px; width: 32%; min-width: 430px; margin-left: 10px;">
+                    <img style="margin-top: 10px; height: 250px;" src="https://cnet4.cbsistatic.com/img/vP6lBvUNSED0BkhMxbGBb1s8H7k=/1200x630/2016/09/29/77b0ebb4-5c94-4949-b15b-a66e227fa751/cucapa.jpg" alt="Siluetas futuristicas" class="w-100 rounded shadow">
+                    <h2 class="p-3">Cervezas artesanales</h2>
+                    <p>Para los amantes de las cervezas naturales, contamos con una gran variedad de cervezas artesanales y ejemplo de ello es la marca Cucapá. De un dulzor a malta suave tiene un carácter ligero de panes, galletas y trigo. Es una blonde ale que combina con comida thai, salmón y pollo. Cucapá Honey: Una amber ale que contiene miel que contiene diversos lúpulos cítricos americanos y maltas. En su sabor es posible detectar notas afrutadas. </p>
                 </div>
-            </div>
         </div>
-    </div>
-    <div class="container-fluid py-5">
+</div>
+</center>
+
+        
+    <div class="container-fluid py-5" style="margin-top: -10px;">
         <div class="container">
             <div class="row">
                 <center>
                 <a name="Mapa"></a>
-                <H2>Mapa de ubicacion</H2>
+                <H2 style="background: linear-gradient(to bottom, red 80%, yellow);">Mapa de ubicación</H2>
                 <div id="mapa"></div>
                 </center>
             </div>
@@ -100,7 +113,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 style="color: white;">Pie de paginass</h2>
+                    <h2 style="color: white;">Datos y ubicación</h2>
+                    <p style="color: white;">Costera Miguel Alemán esq Francisco Pizarro, Fracc Magallanes Cp:39860, Acapulco, Guerrero.</p>
+                    <p style="color: white;">Telefono: 7441490926</p>
+                    <a href="https://www.facebook.com/Modelorama-jamateco-1237613796296374/"><img src="https://images.vexels.com/media/users/3/137253/isolated/preview/90dd9f12fdd1eefb8c8976903944c026-logotipo-del-icono-de-facebook-by-vexels.png" style="width: 50px;" alt="facebook"></a>
                 </div>
             </div>
         </div>
@@ -113,7 +129,7 @@
     AOS.init();
     function iniciaMapa() {
         var coordenadas ={
-            lat : 21.152639, lng : -101.711598
+            lat : 19.861482, lng : -99.875607
         }
         var map = new google.maps.Map(document.getElementById('mapa'),
         {
