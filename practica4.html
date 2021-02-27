@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API estática de Google Maps</title>
+</head>
+<body>
+    <button onclick="obtenerUbicacion()">obtener ubicación</button>
+    <div id="mapa">
+        <img id="imagenmapa" alt="Imagen de mapa">
+    </div>
+    <script>
+        function obtenerUbicacion() {
+               if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(muestraPosicion);
+        }
+           else {
+            demo.innerHTML = "El navegador no es compatible con la geolocalización."
+           }
+
+           function muestraPosicion(posicion){
+               var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
+
+               console.log(coordenadas);
+               var imagenmapa = document.getElementById("imagenmapa");
+               imagenmapa.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=20&size=800x800&key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24";
+            }
+
+        }
+    </script>
+</body>
+</html>
