@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <style>
+    #mapa {
+        height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body>
+    <div id="mapa"></div>
+    <script>
+      var map;
+
+      var coordenadas = {
+        lat:0,
+        lng:0
+      }
+
+      var propiedades = {
+        center: coordenadas,
+        zoom: 20
+      }
+
+    </script>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa"
+    async defer>
+</script>
+</body>
+</html>
