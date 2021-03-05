@@ -4,45 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 6</title>
-
+    <title>Practica 6 Mapa pant completa</title>
     <style>
-
         #map {
             height: 100%;
         }
-
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
     </style>
-
 </head>
 <body>
-
     <div id="map"></div>
-
     <script>
         var map;
-
         var coordenadas = {
             lat:0,
             lng:0
         };
-
         var propiedades = {
             center: coordenadas,
             zoom: 20
         };
 
         function iniciaMapa() {
-
             map = new google.maps.Map(document.getElementById("map"), propiedades);
-
             var icono = {
-                url: "https://media.giphy.com/media/1ZweHMlSaxcc32mSSu/giphy.gif", 
+                url: "https://forumsmile.ru/u/6/0/7/6071f9a783e292842f65d7d0ab89066f.gif", 
                 scaledSize: new google.maps.Size(50,50),
                 origin: new google.maps.Point(0,0),
                 anchor: new google.maps.Point(0,0)
@@ -55,40 +45,25 @@
             });
 
             if(navigator.geolocation){
-
                 setInterval( ()=> {
                    moverPosicion(marker);
-                   console.log("Mueve posición");
+                   console.log("Se esta moviendo la posición");
                 },5000);
-                
-
             }
-
             function moverPosicion(marker){
-
                 navigator.geolocation.getCurrentPosition( posicion => {
                     var pos = {
                         lat: posicion.coords.latitude,
                         lng: posicion.coords.longitude
                     }
-
                     marker.setPosition(pos);
                     map.panTo(pos);
                     map.setCenter(pos);
-
                 });
-
             }
-
         }
-
-
     </script>
-    
-
-
     <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
-
 </body>
 </html>
