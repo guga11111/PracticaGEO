@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 5</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
         #map {
             width: 100%;
             height: 600px;
         }
+
+        body {
+            background-color: goldenrod;
+        }
+        
+        .title {
+            color: green;
+            text-align: center;
+        }
+
+        .fondotitulo {
+            background-color: sandybrown;
+        }
     </style>
 </head>
+
 <body>
+    <div class="fondotitulo">
+        <h1 class="title">Practica 6</h1>
+    </div>
+    <br>
     <div class="container-fluid">
         <div class="container">
             <div class="row">
@@ -25,19 +45,21 @@
         </div>
     </div>
     <script>
-        var informacion =  "<h1>Casa de usted.</h1>"
-        var informacion2 =  "<h1>Centro de San Felipe</h1>"
+        var info = "<h1>Tu posición actual</h1>"
+        var info2 = "<h1>Acapulco,Gro</h1>"
+
         function iniciaMapa() {
             var propiedades = {
                 center: {
-                    lat: 21.4787645, lng: -101.2159166
+                    lat: 16.8638,
+                    lng: -99.8816
                 },
                 zoom: 9
             };
             const mapa = document.getElementById("map")
-            const map = new google.maps.Map(mapa,propiedades)
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition( position => {
+            const map = new google.maps.Map(mapa, propiedades)
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
                     let posicion = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
@@ -50,30 +72,38 @@
                     const marcador = new google.maps.Marker(propiedadesMarcador);
                     map.setCenter(posicion)
                     const infowindow = new google.maps.InfoWindow({
-                        content : informacion
+                        content: info
                     })
-                    marcador.addListener("click", ()=>{
-                        infowindow.open(map,marcador);
+                    marcador.addListener("click", () => {
+                        infowindow.open(map, marcador);
                     })
                 })
                 let propiedadesMarcador2 = {
-                        position: {lat: 21.4787645, lng: -101.2159166},
-                        map,
-                        title: "Marcardor2"
-                    }
-                    const marcador2 = new google.maps.Marker(propiedadesMarcador2);
+                    position: {
+                        lat: 16.8638,
+                        lng: -99.8816
+                    },
+                    map,
+                    title: "Marcardor 2"
+                }
+                const marcador2 = new google.maps.Marker(propiedadesMarcador2);
 
-                    map.setCenter(propiedadesMarcador2.position)
-                    const infowindow2 = new google.maps.InfoWindow({
-                        content : informacion2
-                    })
-                    marcador2.addListener("click", ()=>{
-                        infowindow2.open(map,marcador2);
-                    })
+                map.setCenter(propiedadesMarcador2.position)
+                const infowindow2 = new google.maps.InfoWindow({
+                    content: info2
+                })
+                marcador2.addListener("click", () => {
+                    infowindow2.open(map, marcador2);
+                })
             }
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa"
+        async defer></script>
 </body>
+
 </html>
