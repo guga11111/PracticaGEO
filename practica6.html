@@ -28,7 +28,6 @@
             center: coordenadas,
             zoom: 20
         };
-
         function iniciaMapa() {
             map = new google.maps.Map(document.getElementById("map"), propiedades);
             var icono = {
@@ -37,20 +36,18 @@
                 origin: new google.maps.Point(0,0),
                 anchor: new google.maps.Point(0,0)
             }
-
             var marker = new google.maps.Marker({
                 position: coordenadas,
                 icon: icono,
                 map: map
             });
-
             if(navigator.geolocation){
                 setInterval( ()=> {
-                   moverPosicion(marker);
-                   console.log("Se esta moviendo la posición");
+                   Movimiento(marker);
+                   console.log("Se esta cambiando la posición");
                 },5000);
             }
-            function moverPosicion(marker){
+            function Movimiento(marker){
                 navigator.geolocation.getCurrentPosition( posicion => {
                     var pos = {
                         lat: posicion.coords.latitude,
