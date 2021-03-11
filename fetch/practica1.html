@@ -15,8 +15,13 @@
     .then( function(response){
 
       response.json().then(function(datos){
-        
-        console.log(datos); 
+
+        datos.forEach( registro => {
+          console.log(registro.country);
+          let nombre = document.createElement("p");
+          nombre.textContent = "Pais" + registro.country + "casos" + registro.cases;
+          paises.appendChild(nombre);
+        })
 
       });
 
