@@ -18,7 +18,7 @@
   <script>
 
     var paises = document.getElementById("paises");
-    fetch("datos.json")
+    fetch("https://corona.lmao.ninja/v3/covid-19/countries")
     .then( function(response){
 
       response.json().then( function(datos){
@@ -35,7 +35,7 @@
 
           let nombre = document.createElement("p");
           nombre.textContent = "Pais: " + registro.country + " Casos: " + registro.cases;
-          paises.appendChild(nombre);
+          columna.appendChild(nombre);
         })
 
       });
