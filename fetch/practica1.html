@@ -14,12 +14,12 @@
     fetch("datos.json")
     .then( function(response){
 
-      response.json().then(function(datos){
+      response.json().then( function(datos){
 
         datos.forEach( registro => {
           console.log(registro.country);
           let nombre = document.createElement("p");
-          nombre.textContent = "Pais: " + registro.country + "casos: " + registro.cases;
+          nombre.textContent = "Pais: " + registro.country + " Casos: " + registro.cases;
           paises.appendChild(nombre);
         })
 
