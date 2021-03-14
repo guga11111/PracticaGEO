@@ -20,38 +20,32 @@
 </head>
 <body>
     <div id="map"></div>
-
     <script>
-
         var coordenadas = {
             lat: 0,
             lng: 0
         };
-
         var propiedades = {
             center: coordenadas,
             zoom: 2
         };
-
         function obtieneMarcadores(){
-
             const markers = [
                 {
                     name: "México",
                     longitude: "-99.1276",
                     latitude: "19.427"
                 }, {
-                    name: "Brazil",
-                    longitude: "-47.9292",
-                    latitude: "-15.7801"
+                    name: "Rusia",
+                    longitude: "105.318756",
+                    latitude: "61.52401"
                 }, {
-                    name: "Spain",
-                    longitude: "-3.70327",
-                    latitude: "40.4167"
+                    name: "Australia",
+                    longitude: "133.775136",
+                    latitude: "-25.274398"
                 }
             ];
             return markers;
-
         };
         function iniciaMapa(){
 
@@ -67,9 +61,7 @@
                 });
             }
         };
-
     </script>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
 </body>
 </html>
