@@ -13,19 +13,27 @@
             margin: 0px;
             padding: 0px;
             height: 100%;
-            background: rgb(247, 202, 201);
-            background: -moz-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
-            background: -webkit-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
-            background: linear-gradient(135deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);
-        }
+            background-color: khaki;
 
-        h1{
-            color:white;
         }
-
         #mapa {
+          margin-top: 30px;
             width: 100%;
             height: 640px;
+        }
+        .select {
+          background-color: grey;
+          color: white;
+          margin-bottom: 20px;
+        }
+        .title {
+          background-color: indianred;
+          height: 50px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        }
+        .space {
+          margin-top: 10px;
         }
 
         
@@ -35,33 +43,34 @@
 <body>
 
 <form action="">
-    <div class="container-fluid ">
+    <div class="container-fluid space">
         <div class="container">
-            <div class="row p-2">
-
-                <div class="mx-auto text-center">
-                    <h1>Google Maps Idiomas</h1>
-                </div>
-
-                <div class="input-group mb-3">
+              <center class="title">
+                    <h1>Diferentes idiomas en Google Maps</h1>
+                     <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <label class="input-group-text" for="inputGroupSelect01">Idiomas</label>
                     </div>
-                    <select select name="idioma" id="idioma" class="custom-select" onchange="this.form.submit()">
+                    <select select name="idioma" id="idioma" class="custom-select select" onchange="this.form.submit()">
                         <option value="es">Español</option>
                         <option value="en">Inglés</option>
                         <option value="it">Italiano</option>
                         <option value="zh">Chino</option>
                         <option value="ja">Japonés</option>
+                        <option value="ca">Catalán</option>
+                        <option value="fr">Francés</option>
+                        <option value="de">Alemán</option>
                     </select>
                   </div>
-            </div>
+              </center>
+                
 
             <div class="row">
                 <div class="col-12">
                     <div id="mapa"></div>
                 </div>
             </div>
+           
 
         </div>
     </div>
@@ -85,8 +94,7 @@
 
         var script = document.createElement('script');
 
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA3HTGbR2g2fA9AMdMoXbAIYMz2dIONoFs&callback=iniciaMapa&language=' + idioma;
-
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa&language=' + idioma;
         document.head.appendChild(script);
 
         function iniciaMapa(){
