@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Gustavo</title>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Lista de productos</h1>
+                </div>
+            </div>
+            <form id="forma">
+            <div class="row">
+                <div class="col-12 col-md-4 py-2">
+                    <input type="text" name="nombre" required class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-12 col-md-4 py-2">
+                    <input type="number" step="any" name="codigo" required class="form-control" placeholder="Código">
+                </div>
+                <div class="col-12 col-md-4 py-2">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 p-2">
+                    <ul id="lista" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCrXFL_mMbyLRVSC9Fn6_lfsDjMx54EzlE",
+            authDomain: "proyecto1-935aa.firebaseapp.com",
+            databaseURL: "https://proyecto1-935aa.firebaseio.com",
+            projectId: "proyecto1-935aa",
+            storageBucket: "proyecto1-935aa.appspot.com",
+            messagingSenderId: "514873387506",
+            appId: "1:514873387506:web:fa75cac073ad42be0b636b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore()
+        const productoslista = document.querySelector("#lista");
+        const formulario = document.querySelector("#forma");
+        function renderProductos(doc){
+                let li = document.createElement("li");
+                let nombre = document.createElement("span");
+                let codigo = document.createElement("span");
+                let borrar = document.createElement("button")
+
+                borrar.className = "btn btn-danger m-3";
+
+                nombre.textContent = doc.data().nombre + " ";
+                codigo.textContent = doc.data().codigo + " ";
+                borrar.textContent = "Borrar";
+
+                li.setAttribute("id", doc.id);
+                li.appendChild(borrar);
+                li.appendChild(nombre);
+                li.appendChild(codigo);
+
+                productoslista.appendChild(li);
+
+                borrar.addEventListener("click", (e) => {
+                    let id = e.target.parentElement.getAttribute("id"); 
+                    db.collection("productos").doc(id).delete();
+                });
+        }
+
+        formulario.addEventListener('submit', (e) => {
+            e.preventDefault();
+            db.collection('productos').add({
+                nombre: formulario.nombre.value,
+                codigo: formulario.codigo.value
+            });
+
+            formulario.nombre.value = '';
+            formulario.codigo.value = '';
+        });
+        db.collection('productos').onSnapshot( snapshot => {
+            let changes = snapshot.docChanges();
+
+            changes.forEach( change => {
+
+
+                if(change.type == 'added') {
+                    renderProductos(change.doc)
+                } else if (change.type = "removed") {
+
+                    console.log(change.doc.id);
+
+                    let valorid = document.getElementById(change.doc.id);
+                    lista.removeChild(valorid)
+                    
+                }
+            });
+
+            console.log(changes)
+
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+</body>
+</html>
