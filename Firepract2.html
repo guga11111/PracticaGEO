@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FireBase</title>
-
+    <title>FireBase Gustavo 2</title>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
     <script src="https://kit.fontawesome.com/725910d27b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 
 </head>
-<body class="bg-light">
+<body style="background-color: #313131;">
 
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <h3><i class="fas fa-boxes text-primary"></i> Lista de productos</h3>
+                    <h3 style="background-color: #313131; color: white;"><i class="fas fa-boxes text-primary"></i> Lista de productos</h3>
                 </div>
                 <div class="col-4">
                     <button type="text" class="btn btn-primary"  data-toggle="modal" data-target="#ventananuevo" >Nuevo <i class="fas fa-plus"></i></button>
@@ -25,8 +23,8 @@
             </div>
         </div>
     </div>
-
-    <div class="container-fluid bg-light">
+    
+    <div class="container-fluid" style="background-color: #336dec; width: 500px; border-radius: 20px;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 p-2">
@@ -36,20 +34,15 @@
         </div>
     </div>
 
-
-    <!-- The Modal -->
     <div class="modal fade " id="ventananuevo">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+        <div class="modal-dialog modal-lg" >
+            <div class="modal-content" style="border-radius: 10px;">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Nuevo producto</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-header" style="background-color: #313131; border-radius: none;">
+                <h4 class="modal-title" style="color: white;">Nuevo producto</h4>
+                <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
             </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body" style="background-color: #313131;">
                 <form id="forma">
                     <div class="row">
                         <div class="col-12 col-md-4 py-2">
@@ -64,9 +57,7 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
+            <div class="modal-footer" style="background-color: #313131;">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
 
@@ -74,19 +65,15 @@
         </div>
     </div>
 
-
-    <!-- The Modal -->
     <div class="modal fade " id="ventanaeditar">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #313131;">
 
-            <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Editar producto</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color: white;">Editar producto</h4>
+                <button type="button" class="close" style="color: white;" data-dismiss="modal">&times;</button>
             </div>
 
-            <!-- Modal body -->
             <div class="modal-body">
                 <form id="formaeditar">
                     <div class="row">
@@ -104,7 +91,6 @@
                 </form>
             </div>
 
-            <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
