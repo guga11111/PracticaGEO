@@ -40,5 +40,17 @@
         "estado": "Guanajuato",
         "coordenadas": {"lat": 21.128611, "lng": -101.667725},
          "habitantes": 1238962
+      },
+      {
+            "nombre": "Acapulco",
+        "estado": "Guerrero",
+        "coordenadas": {"lat":  16.8638, "lng": -99.8816},
+         "habitantes": 687608
+      },
+      {
+            "nombre": "Monterrer",
+        "estado": "Nuevo León",
+        "coordenadas": {"lat":  25.6714, "lng": -100.309},
+         "habitantes": 1142994​
       }
     ]
