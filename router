@@ -1,0 +1,35 @@
+deny icmp 10.27.127.0 0.0.0.255 host 10.27.137.1
+ deny icmp 10.27.127.0 0.0.0.255 host 10.27.137.2
+ deny icmp 10.27.127.0 0.0.0.255 host 10.27.137.3
+ deny icmp 10.27.128.0 0.0.0.255 host 10.27.137.1
+ deny icmp 10.27.128.0 0.0.0.255 host 10.27.137.2
+ deny icmp 10.27.128.0 0.0.0.255 host 10.27.137.3
+ deny icmp 10.27.129.0 0.0.0.255 host 10.27.137.1
+ deny icmp 10.27.129.0 0.0.0.255 host 10.27.137.2
+ deny icmp 10.27.129.0 0.0.0.255 host 10.27.137.3 
+permit tcp 10.27.128.0 0.0.0.255 host 10.27.137.2 eq www
+ permit tcp 10.27.129.0 0.0.0.255 host 10.27.137.1 eq www
+ permit tcp 10.27.128.0 0.0.0.255 host 10.27.137.2 eq 443
+ permit tcp 10.27.129.0 0.0.0.255 host 10.27.137.1 eq 443
+ permit tcp 10.27.127.0 0.0.0.254 host 10.27.137.2 eq www
+ permit tcp 10.27.127.0 0.0.0.254 host 10.27.137.2 eq 443
+ permit tcp 10.27.127.1 0.0.0.254 host 10.27.137.1 eq www
+ permit tcp 10.27.127.1 0.0.0.254 host 10.27.137.1 eq 443
+ permit tcp any host 10.27.137.3 eq domain
+ permit udp any host 10.27.137.3 eq domain
+ deny tcp host 10.27.131.11 10.27.227.0 0.0.0.255 eq 22
+ permit tcp 10.27.131.0 0.0.0.7 10.27.227.0 0.0.0.255 eq 22
+ permit tcp 10.27.131.8 0.0.0.3 10.27.227.0 0.0.0.255 eq 22
+ permit tcp 10.27.130.0 0.0.0.255 host 10.27.137.1 eq www
+ permit tcp 10.27.130.0 0.0.0.255 host 10.27.137.1 eq 443
+ permit tcp 10.27.130.0 0.0.0.255 host 10.27.137.2 eq www
+ permit tcp 10.27.130.0 0.0.0.255 host 10.27.137.2 eq 443
+ permit tcp 10.27.131.0 0.0.0.255 host 10.27.137.1 eq www
+ permit tcp 10.27.131.0 0.0.0.255 host 10.27.137.1 eq 443
+ permit tcp 10.27.131.0 0.0.0.255 host 10.27.137.2 eq www
+ permit tcp 10.27.131.0 0.0.0.255 host 10.27.137.2 eq 443
+ permit icmp 10.27.130.0 0.0.0.255 host 10.27.137.1
+ permit icmp 10.27.130.0 0.0.0.255 host 10.27.137.2
+ permit icmp 10.27.131.0 0.0.0.255 host 10.27.137.1
+ permit icmp 10.27.131.0 0.0.0.255 host 10.27.137.2
+ 
