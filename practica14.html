@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa Shapes</title>
+  <title>Mapas con shapes</title>
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -25,7 +26,7 @@
 
 </head>
 
-<body style="background-color: rgb(236, 170, 116);">
+<body style="background-color: gray;">
 
 
   <div class="container-fluid">
@@ -34,7 +35,7 @@
         <div id="map"></div>
       </div>
       <div class="col-12 col-md-6">
-        <h1 style="background-color: black; color: gray;">Ciudades de México más pobladas</h1>
+        <h1>Ciudades de México más pobladas</h1>
         <div id="datos"></div>
       </div>
     </div>
@@ -59,9 +60,13 @@
       map = new google.maps.Map(document.getElementById('map'), propiedades);
 
 
+
+
+
       fetch('municipios.json')
         .then(function (response) {
           response.json().then(function (municipios) {
+
 
 
             var datos = document.getElementById('datos');
@@ -78,17 +83,19 @@
               <tbody>
             `;
 
+
             var coordenadasVuelos = [];
 
             municipios.forEach(municipio => {
 
+
               coordenadasVuelos.push(municipio.coordenadas);
 
               var municipioCirculo = new google.maps.Circle({
-                strokeColor: '#107529',
+                strokeColor: '#245A2B',
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: '#107529',
+                fillColor: '#245A2B',
                 fillOpacity: 0.35,
                 map: map,
                 center: municipio.coordenadas,
@@ -109,9 +116,9 @@
             var vuelosTrazo = new google.maps.Polyline({
               path: coordenadasVuelos,
               geodesic: true,
-              strokeColor: '#7429FF',
-              strokeOpacity: 1,
-              strokeColor: 6
+              strokeColor: '#311515',
+              strokeOpacity: 0.1,
+              strokeColor: 1
             });
 
             vuelosTrazo.setMap(map);
@@ -124,6 +131,7 @@
 
           });
         });
+
 
     }
   </script>
@@ -138,7 +146,8 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa"
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&libraries=places&callback=iniciaMapa"
     async defer></script>
 
 </body>
