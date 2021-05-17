@@ -6,10 +6,10 @@
         "habitantes": 8851080
       },
       {
-        "nombre": "Monterrey",
-        "estado": "Nuevo León",
-        "coordenadas": {"lat":  25.6714, "lng": -100.309},
-         "habitantes": 1142994
+        "nombre": "Ecatepec",
+        "estado": "Estado de México",
+        "coordenadas": {"lat": 19.560188, "lng": -99.042173},
+        "habitantes": 1655015
       },
       {
             "nombre": "Guadalajara",
@@ -24,10 +24,10 @@
          "habitantes": 1434062
       },
       {
-            "nombre": "Acapulco",
-        "estado": "Guerrero",
-        "coordenadas": {"lat":  16.8638, "lng": -99.8816},
-         "habitantes": 687608
+            "nombre": "Tijuana",
+        "estado": "Baja California Norte",
+        "coordenadas": {"lat": 32.503573, "lng": -116.967028},
+         "habitantes": 1321004      
       },
       {
             "nombre": "Juárez",
