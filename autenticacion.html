@@ -1,177 +1,195 @@
-
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth Gustavo</title>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <style>
-        img {
-            width: 80%;
-        }
-
-        .logged-in, .logged-out {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Gustavo</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">DLS EATS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link logged-in" href="#" data-toggle="modal" data-target="#micuentamodal">Mi Cuenta</a>
-            <a class="nav-item nav-link logged-in" href="#" id="salir">Salir</a>
-            <a class="nav-item nav-link logged-out" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
-            <a class="nav-item nav-link logged-out" href="#" data-toggle="modal" data-target="#registratemodal">Regístrate</a>
-            </div>
-        </div>
-    </nav>
 
-    <div class="modal fade" id="ingresarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="ingresarModalLabel">Ingresar</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <form id="formaingresar">
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="email" class="form-control" required id="correo" placeholder="Ingrese su correo electrónico">
-                        </div>
-                    </div>
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="password" class="form-control" required id="contrasena" placeholder="Ingrese su contraseña">
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <input type="submit" class="btn btn-primary" value="Ingresar">
-                            <p class="error text-danger"></p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-        </div>
+<body style="background-color: rgb(201, 235, 194);">
+  <nav style="background-color: rgb(209, 123, 88); box-shadow: 0 12px 6px -6px gray" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img style="width: 50px; height: 50px;"
+          src="https://logodownload.org/wp-content/uploads/2017/10/Starbucks-logo.png" alt=""></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link"
+              style="color: black; font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial ', sans-serif; "
+              href="#" data-toggle="modal" data-target="#accountModal">Mi cuenta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              style="color: black; font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial', sans-serif;"
+              aria-current="page" id="salir" href="#">Cerrar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              style="color: black; font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial ', sans-serif;"
+              href="#" data-toggle="modal" data-target="#ingresarmodal">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+              style="color: black; font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial ', sans-serif;"
+              aria-current="page" href="#" data-toggle="modal" data-target="#registermodal">Registrarse</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="modal fade" id="registratemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="registrateModalLabel">Regístrate</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <form id="formaregistrate" autocomplete="off">
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="text" class="form-control" id="rnombre" required placeholder="Ingrese su nombre completo">
-                        </div>
-                    </div>
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="email" class="form-control" id="rcorreo" required placeholder="Ingrese su correo electrónico">
-                        </div>
-                    </div>
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="text" class="form-control" id="rcontrasena" required placeholder="Ingrese su contraseña">
-                        </div>
-                    </div>
-                    <div class="row m-2">
-                        <div class="col-12">
-                            <input type="number" step="any" class="form-control" id="rtelefono" required placeholder="Ingrese su teléfono">
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <input type="submit" class="btn btn-primary">
-                            <p class="error text-danger"></p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="modal fade" id="ingresarmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form id="formaingresar">
+            <div class="row">
+              <div class="col-12 m-2">
+                <input type="email" required class="form-control" placeholder="Ingresa tu correo" id="correo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 m-2">
+                <input type="password" required class="form-control" placeholder="Ingresa tu contraseña"
+                  id="contrasena">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <button class="btn btn-primary">Sign In</button>
+                <p class="error text-danger"></p>
+              </div>
+            </div>
+          </form>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-    <div class="modal fade" id="micuentamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="micuentaModalLabel">Mi Cuenta</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <div class="row m-2">
-                    <div class="col-12 datosdelacuenta" >
-                        Informacion de la cuenta
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
+  </div>
+
+  <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form id="formaregistrate">
+            <div class="row">
+              <div class="col-12 m-2">
+                <input type="email" required class="form-control" placeholder="Ingresa tu correo" id="rcorreo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 m-2">
+                <input type="password" required class="form-control" placeholder="Ingresa tu contraseña"
+                  id="rcontrasena">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <button class="btn btn-primary">Registrar</button>
+              </div>
+            </div>
+          </form>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="container">
-        <div class="row text-center" id="listadeplatillos">
+  <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Account</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          informacion de la cuenta
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <br>
+  <div class="container" style="margin-top: 80px;">
+    <div class="row">
+      <div class="col-sm back" style="background-color: burlywood; border-radius: 20px;">
+        <img style="width: 100%; height: 90%; margin-top: 10px; border-radius: 20px;"
+          src="https://live.staticflickr.com/7573/27364508253_5490ff5fae_b.jpg"
+          alt="">
+        <br>
+        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Paninis</span>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="col-sm back" style="background-color: burlywood; border-radius: 20px;">
+        <img style="width: 100%; height: 90%; margin-top: 10px; border-radius: 20px;"
+          src="https://globalassets.starbucks.com/assets/bdc7fcf962884211ab83918d34f73393.jpg?impolicy=1by1_tight_288"
+          alt="">
+        <br>
+        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Frapuccinos</span>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="col-sm back" style="background-color: burlywood; border-radius: 20px;">
+        <img style="width: 100%; height: 90%; margin-top: 10px; border-radius: 20px;"
+          src="https://i.ytimg.com/vi/a43tXqi2MV4/sddefault.jpg"
+          alt="">
+        <br>
+        <span style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Pastel de Zanahoria</span>
+      </div>
+      
+    </div>
+  </div>
 
-
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
-
-
-    <script>
+  <h1>contenido</h1>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script>
     var firebaseConfig = {
-    apiKey: "AIzaSyBPa8Tl0MA2zErlFfBC_vr4jX6WxWYH1ms",
-    authDomain: "authgeo-88efe.firebaseapp.com",
-    projectId: "authgeo-88efe",
-    storageBucket: "authgeo-88efe.appspot.com",
-    messagingSenderId: "541686878872",
-    appId: "1:541686878872:web:bb2c6730c0f0c7ef19b6ed"
-  };
+      apiKey: "AIzaSyBPa8Tl0MA2zErlFfBC_vr4jX6WxWYH1ms",
+      authDomain: "authgeo-88efe.firebaseapp.com",
+      projectId: "authgeo-88efe",
+      storageBucket: "authgeo-88efe.appspot.com",
+      messagingSenderId: "541686878872",
+      appId: "1:541686878872:web:bb2c6730c0f0c7ef19b6ed"
+    };
     firebase.initializeApp(firebaseConfig);
-
     const auth = firebase.auth();
 
     const db = firebase.firestore();
-    </script>
-
-    <script src="scripts/autorizacion.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/micuenta.js"></script>
-
+  </script>
+  <script src="scripts/autorizacion.js"></script>
+  <script src="scripts/index.js"></script>
 </body>
+
 </html>
