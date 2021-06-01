@@ -132,30 +132,39 @@ formaingresar.addEventListener('submit',(e)=>{
 entrarGoogle = () => {
  
     var provider = new firebase.auth.GoogleAuthProvider();
-
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
 
         var token = result.credential.accessToken;
         console.log(token);
 
         var user = result.user;
 
-            console.log(user);
-            const html = `
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+
+                db.collection('usuarios').doc(user.uid).update({
+                    coordenadas: {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    }
+                });
+            });
+        }
+
+        console.log(user);
+        const html = `
                 <p>Nombre: ${ user.displayName }</p>
                 <p>Correo: ${ user.email}</p>
                 <img src="${ user.photoURL }" width="50px">
             `;
-            datosdelacuenta.innerHTML = html;
+        datosdelacuenta.innerHTML = html;
 
-            $('#ingresarmodal').modal('hide');
-            formaingresar.reset();
-            formaingresar.querySelector('.error').innerHTML = '';
+        $('#ingresarmodal').modal('hide');
+        formaingresar.reset();
+        formaingresar.querySelector('.error').innerHTML = '';
 
-
-        // ...
-        }).catch(function(error) {
-            console.log(error);
+    }).catch(function (error) {
+        console.log(error);
     });
 
 }

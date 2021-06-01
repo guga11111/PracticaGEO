@@ -3,14 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMIGOS</title>
-
-    <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <style>
@@ -28,9 +23,9 @@
         }
     </style>
 </head>
-<body class="bg-light">
+<body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">DLS EATS</a>
+        <a class="navbar-brand" href="#">AMIGOS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +39,6 @@
         </div>
     </nav>
 
-    <!-- Modal Ingresar -->
     <div class="modal fade" id="ingresarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -58,12 +52,12 @@
                 <form id="formaingresar">
                     <div class="row m-2">
                         <div class="col-12">
-                            <input type="email" class="form-control" required id="correo" placeholder="Ingrese su correo electrónico">
+                            <input type="email" class="form-control" required id="correo" placeholder="Ingresa tu correo electrónico">
                         </div>
                     </div>
                     <div class="row m-2">
                         <div class="col-12">
-                            <input type="password" class="form-control" required id="contrasena" placeholder="Ingrese su contraseña">
+                            <input type="password" class="form-control" required id="contrasena" placeholder="Ingresa tu contraseña">
                         </div>
                     </div>
                     <div class="row text-center">
@@ -86,8 +80,6 @@
         </div>
     </div>
 
-
-    <!-- Modal Registrate -->
     <div class="modal fade" id="registratemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -138,8 +130,6 @@
         </div>
         </div>
     </div>
-
-    <!-- Modal MiCuenta -->
     <div class="modal fade" id="micuentamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -152,7 +142,7 @@
             <div class="modal-body">
                 <div class="row m-2">
                     <div class="col-12 datosdelacuenta" >
-                        Aquí va la info de su cuenta
+                        Esta es la información de su cuenta
                     </div>
                 </div>
             </div>
@@ -174,17 +164,13 @@
         </div>
     </div>
 
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
+
 
     <script>
-    // Your web app's Firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyAcrMr2H7UrmqlsOJeGw6J6-8SmZSOykSQ",
     authDomain: "amigos-5c175.firebaseapp.com",
@@ -193,7 +179,6 @@
     messagingSenderId: "240296679153",
     appId: "1:240296679153:web:c0f3e311ff4195ac03bb50"
     };
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
     const auth = firebase.auth();
